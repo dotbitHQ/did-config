@@ -1,0 +1,119 @@
+main:
+  status: 1 # 0: off, 1: on
+  type_id_table:
+    account_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    account_sale_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    account_auction_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    apply_register_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    balance_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    income_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    offer_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    pre_account_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    proposal_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    reverse_record_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    sub_account_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    eip712_lib: "0x0000000000000000000000000000000000000000000000000000000000000000"
+  das_lock_out_point_table:
+    ckb_signall:
+      tx_hash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      index: 0
+    ckb_multisign:
+      tx_hash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      index: 0
+    eth:
+      tx_hash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      index: 0
+    tron:
+      tx_hash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      index: 0
+    ed25519:
+      tx_hash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      index: 0
+system_status:
+  apply_register_cell_type: { status: true, version: 1.0.0 }
+  pre_account_cell_type: { status: true, version: 1.0.0 }
+  proposal_cell_type: { status: true, version: 1.0.0 }
+  config_cell_type: { status: true, version: 1.0.0 }
+  account_cell_type: { status: true, version: 1.0.0 }
+  account_sale_cell_type: { status: true, version: 1.0.0 }
+  sub_account_cell_type: { status: true, version: 1.0.0 }
+  offer_cell_type: { status: true, version: 1.0.0 }
+  balance_cell_type: { status: true, version: 1.0.0 }
+  income_cell_type: { status: true, version: 1.0.0 }
+  reverse_record_cell_type: { status: true, version: 1.0.0 }
+  eip712_lib: { status: true, version: 1.0.0 }
+release:
+  lucky_number: 2576980377
+account:
+  max_length: 42 # 42
+  basic_capacity: 20600000000 # 20_600_000_000
+  prepared_fee_capacity: 100000000 # 100_000_000
+  expiration_grace_period: 1 # 7_776_000
+  record_min_ttl: 300
+  record_size_limit: 5000
+  transfer_account_fee: 10000 # 10_000
+  edit_manager_fee: 10000 # 10_000
+  edit_records_fee: 10000 # 10_000
+  common_fee: 10000 # 10_000
+  transfer_account_throttle: 300
+  edit_manager_throttle: 300
+  edit_records_throttle: 300
+  common_throttle: 300
+price:
+  discount:
+    invited_discount: 500
+  prices:
+    - length: 1
+      new: 1000000 # 1_000_000
+      renew: 1000000 # 1_000_000
+    - length: 2
+      new: 1024000000 # 1024_000_000
+      renew: 1024000000 # 1024_000_000
+    - length: 3
+      new: 660000000 # 660_000_000
+      renew: 660000000 # 660_000_000
+    - length: 4
+      new: 160000000 # 160_000_000
+      renew: 160000000 # 160_000_000
+    - length: 5
+      new: 5000000 # 5_000_000
+      renew: 5000000 # 5_000_000
+    - length: 6
+      new: 5000000 # 5_000_000
+      renew: 5000000 # 5_000_000
+    - length: 7
+      new: 5000000 # 5_000_000
+      renew: 5000000 # 5_000_000
+    - length: 8
+      new: 5000000 # 5_000_000
+      renew: 5000000 # 5_000_000
+sub_account:
+  basic_capacity: 20000000000 # 20_000_000_000
+  prepared_fee_capacity: 2000000000 # 2_000_000_000
+  new_sub_account_price: 100000000 # 100_000_000
+  renew_sub_account_price: 100000000 # 100_000_000
+  new_sub_account_custom_price_das_profit_rate: 300
+  renew_sub_account_custom_price_das_profit_rate: 300
+  common_fee: 300000 # 300_000
+  create_fee: 0
+  edit_fee: 0
+  renew_fee: 0
+  recycle_fee: 0
+reverse_resolution:
+  record_basic_capacity: 20000000000 # 20_000_000_000
+  record_prepared_fee_capacity: 100000000 # 100_000_000
+  common_fee: 10000
+char_set_emoji: "./data/char_set_emoji.txt"
+char_set_digit: "./data/char_set_digit_and_symbol.txt"
+char_set_en: "./data/char_set_en.txt"
+char_set_zh_hans: "./data/char_set_zh_hans.txt"
+char_set_zh_hant: "./data/char_set_zh_hant.txt"
+char_set_ja: "./data/char_set_ja.txt"
+char_set_ko: "./data/char_set_ko.txt"
+char_set_ru: "./data/char_set_ru.txt"
+char_set_tr: "./data/char_set_tr.txt"
+char_set_th: "./data/char_set_th.txt"
+char_set_vi: "./data/char_set_vi.txt"
+record_key_namespace: "./data/record_key_namespace.txt"
+sub_account_beta_list: "./data/sub_account_beta_list.txt"
+smt_node_white_list: "./data/smt_note_white_list.txt"
