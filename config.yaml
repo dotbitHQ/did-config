@@ -1,3 +1,17 @@
+system_status:
+  apply_register_cell_type: { status: true, version: '1.1.0' }
+  pre_account_cell_type: { status: true, version: '1.4.0' }
+  proposal_cell_type: { status: true, version: "1.3.0" }
+  config_cell_type: { status: true, version: "1.1.2" }
+  account_cell_type: { status: true, version: "1.7.1" }
+  account_sale_cell_type: { status: true, version: "1.1.1" }
+  sub_account_cell_type: { status: true, version: "1.3.1" }
+  offer_cell_type: { status: true, version: "1.0.1" }
+  balance_cell_type: { status: true, version: "1.3.0" }
+  income_cell_type: { status: true, version: "1.2.1" }
+  reverse_record_cell_type: { status: true, version: "1.1.0" }
+  reverse_record_root_cell_type: { status: true, version: "1.0.0" }
+  eip712_lib: { status: true, version: "1.1.0" }
 main:
   status: 1 # 0: off, 1: on
   type_id_table:
@@ -37,22 +51,6 @@ main:
     eth: '0x0000000000000000000000000000000000000000000000000000000000000000'
     tron: '0x0000000000000000000000000000000000000000000000000000000000000000'
     doge: '0x0000000000000000000000000000000000000000000000000000000000000000'
-system_status:
-  apply_register_cell_type: { status: true, version: '1.1.0' }
-  pre_account_cell_type: { status: true, version: '1.4.0' }
-  proposal_cell_type: { status: true, version: "1.3.0" }
-  config_cell_type: { status: true, version: "1.1.2" }
-  account_cell_type: { status: true, version: "1.7.1" }
-  account_sale_cell_type: { status: true, version: "1.1.1" }
-  sub_account_cell_type: { status: true, version: "1.3.1" }
-  offer_cell_type: { status: true, version: "1.0.1" }
-  balance_cell_type: { status: true, version: "1.3.0" }
-  income_cell_type: { status: true, version: "1.2.1" }
-  reverse_record_cell_type: { status: true, version: "1.1.0" }
-  reverse_record_root_cell_type: { status: true, version: "1.0.0" }
-  eip712_lib: { status: true, version: "1.1.0" }
-release:
-  lucky_number: 2576980377
 account:
   max_length: 42 # 42
   basic_capacity: 20600000000 # 20_600_000_000
@@ -68,6 +66,26 @@ account:
   edit_manager_throttle: 300
   edit_records_throttle: 300
   common_throttle: 300
+apply:
+  apply_min_waiting_block_number: 1
+  apply_max_waiting_block_number: 5760
+proposal:
+  proposal_min_confirm_interval: 0
+  proposal_min_extend_interval: 1
+  proposal_min_recycle_interval: 8
+  proposal_max_account_affect: 50
+  proposal_max_pre_account_contain: 50
+release:
+  # release to 40% = 1717986918
+  # release to 45% = 1932735282
+  # release to 50% = 2147483647
+  # release to 55% = 2362232012
+  # release to 60% = 2576980377
+  lucky_number: 2576980377
+income:
+  basic_capacity: 20000000000 # 20_000_000_000
+  max_records: 50 # 50
+  min_transfer_capacity: 12000000000 # 12_000_000_000
 price:
   discount:
     invited_discount: 500
@@ -96,6 +114,37 @@ price:
     - length: 8
       new: 5000000 # 5_000_000
       renew: 5000000 # 5_000_000
+profit_rate:
+  channel: 1000
+  inviter: 1000
+  proposal_create: 200
+  proposal_confirm: 0
+  income_consolidate: 500
+  sale_buyer_inviter: 1
+  sale_buyer_channel: 1
+  sale_das: 1
+  auction_bidder_inviter: 100
+  auction_bidder_channel: 100
+  auction_das: 100
+  auction_prev_bidder: 4700
+secondary_market:
+  common_fee: 10000 # 10_000
+  sale_min_price: 20000000000 # 20_000_000_000
+  sale_expiration_limit: 86400 # 86400
+  sale_description_bytes_limit: 5000 # 5000
+  sale_cell_basic_capacity: 20000000000 # 20_000_000_000
+  sale_cell_prepared_fee_capacity: 100000000 # 100_000_000
+  offer_cell_basic_capacity: 20000000000 # 20_000_000_000
+  offer_cell_prepared_fee_capacity: 100000000 # 100_000_000
+  offer_min_price: 100000000000 # 100_000_000_000
+  offer_message_bytes_limit: 5000 # 5000
+  auction_max_extendable_duration: 86400 # 86400
+  auction_duration_increment_each_bid: 600 # 600
+  auction_min_opening_price: 200000000000 # 200_000_000_000
+  auction_min_increment_rate_each_bid: 1000 # 1000
+  auction_description_bytes_limit: 5000 # 5000
+  auction_cell_basic_capacity: 20000000000 # 20_000_000_000
+  auction_cell_prepared_fee_capacity: 100000000 # 100_000_000
 sub_account:
   basic_capacity: 20000000000 # 20_000_000_000
   prepared_fee_capacity: 2000000000 # 2_000_000_000
