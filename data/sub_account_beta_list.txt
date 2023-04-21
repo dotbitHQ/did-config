@@ -172,3 +172,5 @@ cdex.bit
 mrfish.bit
 furious.bit
 daohk.bit
+huzi.bit
+denews.bit
