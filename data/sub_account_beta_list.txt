@@ -174,3 +174,4 @@ furious.bit
 daohk.bit
 huzi.bit
 denews.bit
+fengrui.bit
