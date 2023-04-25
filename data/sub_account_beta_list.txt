@@ -175,3 +175,5 @@ daohk.bit
 huzi.bit
 denews.bit
 fengrui.bit
+seedaotest.bit
+seedao.bit
