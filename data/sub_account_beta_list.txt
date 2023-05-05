@@ -178,3 +178,4 @@ fengrui.bit
 seedaotest.bit
 seedao.bit
 bfrenz.bit
+bitdid.bit
