@@ -179,3 +179,4 @@ seedaotest.bit
 seedao.bit
 bfrenz.bit
 bitdid.bit
+voty.bit
