@@ -180,3 +180,4 @@ seedao.bit
 bfrenz.bit
 bitdid.bit
 voty.bit
+brand3.bit
