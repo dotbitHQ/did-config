@@ -1,19 +1,34 @@
+system_status:
+  apply_register_cell_type: { status: true, version: '1.1.0' }
+  pre_account_cell_type: { status: true, version: '1.4.0' }
+  proposal_cell_type: { status: true, version: "1.3.0" }
+  config_cell_type: { status: true, version: "1.1.2" }
+  account_cell_type: { status: true, version: "1.7.1" }
+  account_sale_cell_type: { status: true, version: "1.1.1" }
+  sub_account_cell_type: { status: true, version: "1.4.0" }
+  offer_cell_type: { status: true, version: "1.0.1" }
+  balance_cell_type: { status: true, version: "1.3.0" }
+  income_cell_type: { status: true, version: "1.2.1" }
+  reverse_record_cell_type: { status: true, version: "1.1.0" }
+  reverse_record_root_cell_type: { status: true, version: "1.0.0" }
+  eip712_lib: { status: true, version: "1.1.0" }
 main:
   status: 1 # 0: off, 1: on
   type_id_table:
-    account_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    account_sale_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    account_auction_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    apply_register_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    balance_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    income_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    offer_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    pre_account_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    proposal_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    reverse_record_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    reverse_record_root_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    sub_account_cell: "0x0000000000000000000000000000000000000000000000000000000000000000"
-    eip712_lib: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    account_sale_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    account_auction_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    apply_register_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    balance_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    income_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    offer_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    pre_account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    proposal_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    reverse_record_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    reverse_record_root_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    sub_account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    key_list_config_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    eip712_lib: '0x0000000000000000000000000000000000000000000000000000000000000000'
   das_lock_out_point_table:
     ckb_signall:
       tx_hash: "0x209b35208da7d20d882f0871f3979c68c53981bcc4caa71274c035449074d082"
@@ -30,21 +45,14 @@ main:
     ed25519:
       tx_hash: "0xa706f46e58e355a6d29d7313f548add21b875639ea70605d18f682c1a08740d6"
       index: 0
-system_status:
-  apply_register_cell_type: { status: true, version: 1.0.0 }
-  pre_account_cell_type: { status: true, version: 1.0.0 }
-  proposal_cell_type: { status: true, version: 1.0.0 }
-  config_cell_type: { status: true, version: 1.0.0 }
-  account_cell_type: { status: true, version: 1.0.0 }
-  account_sale_cell_type: { status: true, version: 1.0.0 }
-  sub_account_cell_type: { status: true, version: 1.0.0 }
-  offer_cell_type: { status: true, version: 1.0.0 }
-  balance_cell_type: { status: true, version: 1.0.0 }
-  income_cell_type: { status: true, version: 1.0.0 }
-  reverse_record_cell_type: { status: true, version: 1.0.0 }
-  eip712_lib: { status: true, version: 1.0.0 }
-release:
-  lucky_number: 2576980377
+  das_lock_type_id_table:
+    ckb_signhash: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    ckb_multisig: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    ed25519: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    eth: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    tron: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    doge: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    webauthn: '0x0000000000000000000000000000000000000000000000000000000000000000'
 account:
   max_length: 42 # 42
   basic_capacity: 20600000000 # 20_600_000_000
@@ -60,6 +68,26 @@ account:
   edit_manager_throttle: 300
   edit_records_throttle: 300
   common_throttle: 300
+apply:
+  apply_min_waiting_block_number: 1
+  apply_max_waiting_block_number: 5760
+proposal:
+  proposal_min_confirm_interval: 0
+  proposal_min_extend_interval: 1
+  proposal_min_recycle_interval: 8
+  proposal_max_account_affect: 50
+  proposal_max_pre_account_contain: 50
+release:
+  # release to 40% = 1717986918
+  # release to 45% = 1932735282
+  # release to 50% = 2147483647
+  # release to 55% = 2362232012
+  # release to 60% = 2576980377
+  lucky_number: 2576980377
+income:
+  basic_capacity: 20000000000 # 20_000_000_000
+  max_records: 50 # 50
+  min_transfer_capacity: 12000000000 # 12_000_000_000
 price:
   discount:
     invited_discount: 500
@@ -88,6 +116,37 @@ price:
     - length: 8
       new: 5000000 # 5_000_000
       renew: 5000000 # 5_000_000
+profit_rate:
+  channel: 1000
+  inviter: 1000
+  proposal_create: 200
+  proposal_confirm: 0
+  income_consolidate: 500
+  sale_buyer_inviter: 1
+  sale_buyer_channel: 1
+  sale_das: 1
+  auction_bidder_inviter: 100
+  auction_bidder_channel: 100
+  auction_das: 100
+  auction_prev_bidder: 4700
+secondary_market:
+  common_fee: 10000 # 10_000
+  sale_min_price: 20000000000 # 20_000_000_000
+  sale_expiration_limit: 86400 # 86400
+  sale_description_bytes_limit: 5000 # 5000
+  sale_cell_basic_capacity: 20000000000 # 20_000_000_000
+  sale_cell_prepared_fee_capacity: 100000000 # 100_000_000
+  offer_cell_basic_capacity: 20000000000 # 20_000_000_000
+  offer_cell_prepared_fee_capacity: 100000000 # 100_000_000
+  offer_min_price: 100000000000 # 100_000_000_000
+  offer_message_bytes_limit: 5000 # 5000
+  auction_max_extendable_duration: 86400 # 86400
+  auction_duration_increment_each_bid: 600 # 600
+  auction_min_opening_price: 200000000000 # 200_000_000_000
+  auction_min_increment_rate_each_bid: 1000 # 1000
+  auction_description_bytes_limit: 5000 # 5000
+  auction_cell_basic_capacity: 20000000000 # 20_000_000_000
+  auction_cell_prepared_fee_capacity: 100000000 # 100_000_000
 sub_account:
   basic_capacity: 20000000000 # 20_000_000_000
   prepared_fee_capacity: 2000000000 # 2_000_000_000
@@ -104,17 +163,17 @@ reverse_resolution:
   record_basic_capacity: 20000000000 # 20_000_000_000
   record_prepared_fee_capacity: 100000000 # 100_000_000
   common_fee: 10000
-char_set_emoji: "./data/char_set_emoji.txt"
-char_set_digit: "./data/char_set_digit_and_symbol.txt"
-char_set_en: "./data/char_set_en.txt"
-char_set_zh_hans: "./data/char_set_zh_hans.txt"
-char_set_zh_hant: "./data/char_set_zh_hant.txt"
-char_set_ja: "./data/char_set_ja.txt"
-char_set_ko: "./data/char_set_ko.txt"
-char_set_ru: "./data/char_set_ru.txt"
-char_set_tr: "./data/char_set_tr.txt"
-char_set_th: "./data/char_set_th.txt"
-char_set_vi: "./data/char_set_vi.txt"
-record_key_namespace: "./data/record_key_namespace.txt"
-sub_account_beta_list: "./data/sub_account_beta_list.txt"
-smt_node_white_list: "./data/smt_note_white_list.txt"
+char_set_emoji: './data/char_set_emoji.txt'
+char_set_digit: './data/char_set_digit_and_symbol.txt'
+char_set_en: './data/char_set_en.txt'
+char_set_zh_hans: './data/char_set_zh_hans.txt'
+char_set_zh_hant: './data/char_set_zh_hant.txt'
+char_set_ja: './data/char_set_ja.txt'
+char_set_ko: './data/char_set_ko.txt'
+char_set_ru: './data/char_set_ru.txt'
+char_set_tr: './data/char_set_tr.txt'
+char_set_th: './data/char_set_th.txt'
+char_set_vi: './data/char_set_vi.txt'
+record_key_namespace: './data/record_key_namespace.txt'
+sub_account_beta_list: './data/sub_account_beta_list.txt'
+smt_node_white_list: './data/smt_node_white_list.txt'
