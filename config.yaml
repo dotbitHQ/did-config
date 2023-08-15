@@ -12,6 +12,7 @@ system_status:
   reverse_record_cell_type: { status: true, version: "1.1.0" }
   reverse_record_root_cell_type: { status: true, version: "1.0.0" }
   eip712_lib: { status: true, version: "1.1.0" }
+  key_list_config_cell: { status: true, version: "1.1.0" }
 main:
   status: 1 # 0: off, 1: on
   type_id_table:
@@ -44,6 +45,9 @@ main:
       index: 0
     ed25519:
       tx_hash: '0x29a278a2498ca40d386c1432843e32c04ee996c99e7e16db7e09bfb60f83f47e'
+      index: 0
+    webauthn:
+      tx_hash: '0x0000000000000000000000000000000000000000000000000000000000000000'
       index: 0
   das_lock_type_id_table:
     ckb_signhash: '0x0000000000000000000000000000000000000000000000000000000000000000'
