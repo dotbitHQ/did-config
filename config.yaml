@@ -72,8 +72,8 @@ account:
   edit_manager_throttle: 300
   edit_records_throttle: 300
   common_throttle: 300
-  expiration_auction_period: 2332800 # 2_332_800 (27 days)
-  expiration_deliver_period: 259200 # 259_200 (3 days)
+  expiration_auction_period: 2588400 # 2_588_400 (29 days 23 h)
+  expiration_deliver_period: 3600 #  (1h)
   expiration_auction_start_premiums: 100000000 #
 apply:
   apply_min_waiting_block_number: 1
