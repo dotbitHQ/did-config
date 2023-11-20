@@ -13,6 +13,7 @@ system_status:
   reverse_record_root_cell_type: { status: true, version: "1.1.0" }
   eip712_lib: { status: true, version: "1.2.0" }
   key_list_config_cell: { status: true, version: "1.1.0" }
+  dpoint_cell: { status: true, version: "1.0.0" }
 main:
   status: 1 # 0: off, 1: on
   type_id_table:
@@ -25,27 +26,11 @@ main:
     offer_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     pre_account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     proposal_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
-    reverse_record_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     reverse_record_root_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     sub_account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
-    key_list_config_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     eip712_lib: '0x0000000000000000000000000000000000000000000000000000000000000000'
-  das_lock_out_point_table:
-    ckb_signall:
-      tx_hash: "0x209b35208da7d20d882f0871f3979c68c53981bcc4caa71274c035449074d082"
-      index: 0
-    ckb_multisign:
-      tx_hash: "0x747411fb3914dd7ca5488a0762c6f4e76f56387e83bcbb24e3a01afef1d5a5b4"
-      index: 0
-    eth:
-      tx_hash: "0x8ffa409ba07d74f08f63c03f82b7428d36285fe75b2173fc2476c0f7b80c707a"
-      index: 0
-    tron:
-      tx_hash: "0x9e0823959e5b76bd010cc503964cced4f8ae84f3b03e94811b083f9765534ff1"
-      index: 0
-    ed25519:
-      tx_hash: "0xa706f46e58e355a6d29d7313f548add21b875639ea70605d18f682c1a08740d6"
-      index: 0
+    key_list_config_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    dpoint_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
   das_lock_type_id_table:
     ckb_signhash: '0x0000000000000000000000000000000000000000000000000000000000000000'
     ckb_multisig: '0x0000000000000000000000000000000000000000000000000000000000000000'
@@ -58,7 +43,7 @@ account:
   max_length: 42 # 42
   basic_capacity: 20600000000 # 20_600_000_000
   prepared_fee_capacity: 100000000 # 100_000_000
-  expiration_grace_period: 1 # 7_776_000
+  expiration_grace_period: 7776000 # 7_776_000  (90 days)
   record_min_ttl: 300
   record_size_limit: 5000
   transfer_account_fee: 10000 # 10_000
@@ -69,6 +54,9 @@ account:
   edit_manager_throttle: 300
   edit_records_throttle: 300
   common_throttle: 300
+  expiration_auction_period: 2588400 # 2_588_400 (29 days 23 h)
+  expiration_deliver_period: 3600 #  (1h)
+  expiration_auction_start_premiums: 100000000
 apply:
   apply_min_waiting_block_number: 1
   apply_max_waiting_block_number: 5760
@@ -164,6 +152,27 @@ reverse_resolution:
   record_basic_capacity: 20000000000 # 20_000_000_000
   record_prepared_fee_capacity: 100000000 # 100_000_000
   common_fee: 10000
+dpoint:
+  basic_capacity: 15000000000 # 15_000_000_000
+  prepared_fee_capacity: 0
+  transfer_whitelist:
+    # Backend Dev
+    - code_hash: '0x326df166e3f0a900a0aee043e31a4dea0f01ea3307e6e235f09d1b4220b75fbd'
+      hash_type: type
+      args: '0x0504a503c4b96718d146698879daa6ed4ecd99e6cb0504a503c4b96718d146698879daa6ed4ecd99e6cb'
+    # Deploy lock
+    - code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
+      hash_type: type
+      args: '0xbc502a34a430e3e167c82a24db6f9237b15ebf35'
+  capacity_recycle_whitelist:
+    # Backend Dev
+    - code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
+      hash_type: type
+      args: '0x3cf934b873c937e0a00a664a854e800a4f3be8ce'
+    # Deploy lock
+    - code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
+      hash_type: type
+      args: '0xbc502a34a430e3e167c82a24db6f9237b15ebf35'
 char_set_emoji: './data/char_set_emoji.txt'
 char_set_digit: './data/char_set_digit_and_symbol.txt'
 char_set_en: './data/char_set_en.txt'
