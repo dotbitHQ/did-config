@@ -43,7 +43,7 @@ account:
   max_length: 42 # 42
   basic_capacity: 20600000000 # 20_600_000_000
   prepared_fee_capacity: 100000000 # 100_000_000
-  expiration_grace_period: 1 # 7_776_000
+  expiration_grace_period: 7776000 # 7_776_000  (90 days)
   record_min_ttl: 300
   record_size_limit: 5000
   transfer_account_fee: 10000 # 10_000
@@ -54,6 +54,9 @@ account:
   edit_manager_throttle: 300
   edit_records_throttle: 300
   common_throttle: 300
+  expiration_auction_period: 2588400 # 2_588_400 (29 days 23 h)
+  expiration_deliver_period: 3600 #  (1h)
+  expiration_auction_start_premiums: 100000000 #
 apply:
   apply_min_waiting_block_number: 1
   apply_max_waiting_block_number: 5760
