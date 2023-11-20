@@ -13,6 +13,7 @@ system_status:
   reverse_record_root_cell_type: { status: true, version: "1.1.0" }
   eip712_lib: { status: true, version: "1.1.0" }
   key_list_config_cell: { status: true, version: "1.1.0" }
+  dpoint_cell: { status: true, version: "1.0.0" }
 main:
   status: 1 # 0: off, 1: on
   type_id_table:
@@ -25,11 +26,11 @@ main:
     offer_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     pre_account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     proposal_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
-    reverse_record_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     reverse_record_root_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     sub_account_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
     eip712_lib: '0x0000000000000000000000000000000000000000000000000000000000000000'
     key_list_config_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
+    dpoint_cell: '0x0000000000000000000000000000000000000000000000000000000000000000'
   das_lock_type_id_table:
     ckb_signhash: '0x0000000000000000000000000000000000000000000000000000000000000000'
     ckb_multisig: '0x0000000000000000000000000000000000000000000000000000000000000000'
@@ -148,6 +149,31 @@ reverse_resolution:
   record_basic_capacity: 20000000000 # 20_000_000_000
   record_prepared_fee_capacity: 100000000 # 100_000_000
   common_fee: 10000
+dpoint:
+  basic_capacity: 15000000000 # 15_000_000_000
+  prepared_fee_capacity: 0
+  transfer_whitelist:
+    # Backend Dev
+    - code_hash: '0x326df166e3f0a900a0aee043e31a4dea0f01ea3307e6e235f09d1b4220b75fbd'
+      hash_type: type
+      args: '0x0504a503c4b96718d146698879daa6ed4ecd99e6cb0504a503c4b96718d146698879daa6ed4ecd99e6cb'
+    # Deploy lock
+    - code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
+      hash_type: type
+      args: '0xbc502a34a430e3e167c82a24db6f9237b15ebf35'
+    # Other
+    - code_hash: '0x326df166e3f0a900a0aee043e31a4dea0f01ea3307e6e235f09d1b4220b75fbd'
+      hash_type: type
+      args: '0x0589C31b1cf3f7856c1111f2bfe6d57Ae35282b4310589C31b1cf3f7856c1111f2bfe6d57Ae35282b431'
+  capacity_recycle_whitelist:
+    # Backend Dev
+    - code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
+      hash_type: type
+      args: '0x3cf934b873c937e0a00a664a854e800a4f3be8ce'
+    # Deploy lock
+    - code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8'
+      hash_type: type
+      args: '0xbc502a34a430e3e167c82a24db6f9237b15ebf35'
 char_set_emoji: './data/char_set_emoji.txt'
 char_set_digit: './data/char_set_digit_and_symbol.txt'
 char_set_en: './data/char_set_en.txt'
